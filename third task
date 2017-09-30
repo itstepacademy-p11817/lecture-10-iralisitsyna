@@ -1,0 +1,82 @@
+//lecture 10: third task
+#include <iostream>
+#include <cmath>
+#include <conio.h>
+
+using namespace std;
+
+int main() {
+
+	setlocale(LC_ALL, "Russian");
+
+	int salary_1, salary_2, salary_3;//зарплата менеджеров
+	int sales_meneger_1, sales_meneger_2, sales_meneger_3;//продажи менеджеров
+
+	cout << "Введите продажи первого менеджера!\n";
+	while (!(cin >> sales_meneger_1)) {
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Введите продажи первого менеджера!\n";
+	}
+
+	cout << "Введите продажи второго менеджера!\n";
+	while (!(cin >> sales_meneger_2)) {
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Введите продажи второго менеджера!\n";
+	}
+	
+
+	cout << "Введите продажи третьего менеджера!\n";
+	while (!(cin >> sales_meneger_3)) {
+		cin.clear();
+		while (cin.get() != '\n');
+		cout << "Введите продажи третьего менеджера!\n";
+	}
+
+		if (sales_meneger_1 < 500) //премия первого менеджера
+			salary_1 = 200 + (200 / 100 * 3);
+		else if (sales_meneger_1 >= 500 && sales_meneger_1 < 1000)
+			salary_1 = 200 + (200 / 100 * 5);
+		else if (sales_meneger_1 >= 1000)
+			salary_1 = 200 + (200 / 100 * 8);
+
+		if (sales_meneger_2 < 500) //премия второго менеджера
+			salary_2 = 200 + (200 / 100 * 3);
+		else if (sales_meneger_2 >= 500 && sales_meneger_2 < 1000)
+			salary_2 = 200 + (200 / 100 * 5);
+		else if (sales_meneger_2 >= 1000)
+			salary_2 = 200 + (200 / 100 * 8);
+
+		if (sales_meneger_3 < 500) //премия третьего менеджера
+			salary_3 = 200 + (200 / 100 * 3);
+		else if (sales_meneger_3 >= 500 && sales_meneger_3 < 1000)
+			salary_3 = 200 + (200 / 100 * 5);
+		else if (sales_meneger_3 >= 1000)
+			salary_3 = 200 + (200 / 100 * 8);
+
+		if (salary_1 > salary_2 && salary_1 > salary_3)
+			cout << "Зарплата первого менеджера =" << salary_1 << "$\n" <<
+			"Зарплата вторго менеджера =" << salary_2 << "$\n" <<
+			"Зарплата третьего менеджера =" << salary_3 << "$\n" <<
+			"Первый менеджер - Лучший! Его зарплата =" << (salary_1 + 200) << "$\n";
+		else if (salary_2 > salary_1 && salary_2 > salary_3)
+			cout << "Зарплата первого менеджера =" << salary_1 << "$\n" <<
+			"Зарплата вторго менеджера =" << salary_2 << "$\n" <<
+			"Зарплата третьего менеджера =" << salary_3 << "$\n" <<
+			"Второй менеджер - Лучший! Его зарплата =" << (salary_2 + 200) << "$\n";
+		else if (salary_3 > salary_2 && salary_3 > salary_1)
+			cout << "Зарплата первого менеджера =" << salary_1 << "$\n" <<
+			"Зарплата вторго менеджера =" << salary_2 << "$\n" <<
+			"Зарплата третьего менеджера =" << salary_3 << "$\n" <<
+			"Третий менеджер - Лучший! Его зарплата =" << (salary_3 + 200) << "$\n";
+		else if (salary_1 == salary_2 && salary_1 == salary_3)
+			cout << "Зарплата первого менеджера =" << salary_1 << "$\n" <<
+			"Зарплата вторго менеджера =" << salary_2 << "$\n" <<
+			"Зарплата третьего менеджера =" << salary_3 << "$\n" <<
+			"Все молодцы!";
+
+
+	system("pause");
+	return 0;
+}
